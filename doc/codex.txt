@@ -1,0 +1,58 @@
+*codex.nvim*                                        Codex CLI for Neovim
+
+INTRODUCTION                                        *codex.nvim-intro*
+    codex.nvim integrates the Codex CLI into Neovim using a floating
+    terminal with multi-session management and sensible defaults.
+
+REQUIREMENTS                                        *codex.nvim-req*
+    Neovim 0.9+ and the Codex CLI in PATH (auto-install supported).
+
+COMMANDS                                            *codex.nvim-commands*
+    :Codex, :CodexToggle    Toggle the Codex window
+    :CodexNew [title]       Create a new session (optional title)
+    :CodexList              List and pick sessions
+    :CodexNext, :CodexPrev  Cycle sessions
+    :CodexClose [id]        Close by id (or current if omitted)
+
+DEFAULT KEYMAPS                                     *codex.nvim-keymaps*
+    <leader>at   Toggle Codex
+    <leader>aq   Close Codex window
+    <leader>aN   New session
+    <leader>al   List sessions
+    <leader>an   Next session
+    <leader>ap   Previous session
+    <leader>ax   Close session
+    (visual) <leader>as  Send selection to latest session under cwd
+
+TERMINAL MAPPINGS                                   *codex.nvim-terminal*
+    Inside Codex buffers:
+      <Esc>   Leave terminal mode
+      <C-w>   Window command prefix
+
+CONFIGURATION                                       *codex.nvim-config*
+    Auto-setup runs on load. Override defaults via globals:
+      >
+        vim.g.codex_config = { border = 'rounded', autoinstall = true }
+        -- or
+        vim.g.codex_disable_auto_setup = true
+      <
+
+    Programmatic setup:
+      >
+        require('codex').setup({
+          border = 'rounded', width = 0.8, height = 0.8,
+          winbar = true, autoinstall = true,
+          keymaps = { send_selection = '<leader>as' },
+        })
+      <
+
+STATUSLINE                                          *codex.nvim-status*
+    Lua helper for statusline/lualine:
+      >
+        require('codex').status()
+      <
+
+HELP TAGS                                           *codex.nvim-help*
+    Generate helptags after installation:
+      :helptags ALL
+
