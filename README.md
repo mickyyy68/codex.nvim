@@ -1,8 +1,8 @@
 # codex.nvim
 
-[![CI](https://github.com/mickyyy68/codex.nvim/actions/workflows/ci.yml/badge.svg)](https://github.com/mickyyy68/codex.nvim/actions/workflows/ci.yml)
-
 Neovim integration for the Codex CLI with a tidy, multi-session floating terminal UI. Ships sane defaults so you can keep your `init.lua` minimal.
+
+![Demo](demo.png)
 
 - Multi-session: create, switch, list, and close Codex sessions
 - Floating window with optional winbar “tabs” for sessions
