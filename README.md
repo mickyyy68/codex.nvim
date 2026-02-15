@@ -37,6 +37,7 @@ vim.g.codex_disable_auto_setup = true
 ```
 
 ## Default Keymaps
+Normal mode:
 - `<leader>at` Toggle Codex window
 - `<leader>aq` Close Codex window
 - `<leader>aN` New session
@@ -54,6 +55,7 @@ When which-key is installed, a `Codex` group is registered automatically on `Ver
 - `:CodexList` — pick a session from a list
 - `:CodexNext`, `:CodexPrev` — cycle sessions
 - `:CodexClose [id]` — close a session by id (or current if omitted)
+- `:CodexWhere` — print the currently loaded `codex.nvim` source file path
 
 ## Statusline
 A small helper for lualine and friends:
@@ -97,6 +99,10 @@ If Codex isn’t found, you can pick a package manager. On success but missing P
 Inside Codex buffers:
 - `<Esc>` leaves terminal mode
 - `<C-w>` opens window command prefix (after exiting terminal)
+
+Session keymaps are intentionally normal-mode only to avoid terminal input lag
+when `<leader>` is a printable key (for example `<Space>`). Press `<Esc>` first,
+then use your Codex keymaps.
 
 No global `TermOpen` autocommand is required.
 

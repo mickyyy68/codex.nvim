@@ -13,8 +13,10 @@ COMMANDS                                            *codex.nvim-commands*
     :CodexList              List and pick sessions
     :CodexNext, :CodexPrev  Cycle sessions
     :CodexClose [id]        Close by id (or current if omitted)
+    :CodexWhere             Print loaded codex.nvim source file path
 
 DEFAULT KEYMAPS                                     *codex.nvim-keymaps*
+    Normal mode:
     <leader>at   Toggle Codex
     <leader>aq   Close Codex window
     <leader>aN   New session
@@ -28,6 +30,8 @@ TERMINAL MAPPINGS                                   *codex.nvim-terminal*
     Inside Codex buffers:
       <Esc>   Leave terminal mode
       <C-w>   Window command prefix
+    Session keymaps are normal-mode only to avoid terminal typing lag when
+    <leader> is printable (for example, <Space>). Press <Esc> first.
 
 CONFIGURATION                                       *codex.nvim-config*
     Auto-setup runs on load. Override defaults via globals:
@@ -55,4 +59,3 @@ STATUSLINE                                          *codex.nvim-status*
 HELP TAGS                                           *codex.nvim-help*
     Generate helptags after installation:
       :helptags ALL
-
